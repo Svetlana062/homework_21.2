@@ -1,4 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
+import requests
+
 
 # Для начала определим настройки запуска
 hostName = "localhost"  # Адрес для доступа по сети
@@ -16,7 +18,16 @@ class MyServer(BaseHTTPRequestHandler):
 
         # Чтение содержимого файла contact.html и отправка его в ответе
         try:
-            with open("contact.html", "r", encoding="utf-8") as file:
+            try:
+                # Загрузка HTML-контента из удаленного репозитория
+                response = requests.get("https://raw.githubusercontent.com/Svetlana062/homework_21.2/feature/hw_21.2/contacts.html")
+                response.raise_for_status()  # Проверка на ошибки
+                content = response.text
+                self.wfile.write(bytes(content, "utf-8"))
+            except Exception as e:
+                self.wfile.write(bytes("<h1>404 Not Found</h1>", "utf-8"))
+
+            with open("contacts.html", "r", encoding="utf-8") as file:
                 content = file.read()
                 self.wfile.write(bytes(content, "utf-8"))  # Тело ответа
         except FileNotFoundError:
