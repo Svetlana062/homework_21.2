@@ -58,7 +58,6 @@
       margin: 1px auto; /* Центрирование контейнера с отступом сверху и снизу */
       max-width: 500px; /* Максимальная ширина контейнера */
       margin-bottom: 5px; /* Уменьшенный нижний отступ у заголовков полей ввода */
-      width: 500px;
     }
     .info-container {
       width: 480px;
@@ -123,30 +122,28 @@
                     <!-- Контактные данные -->
                     <div class="col-md-6">
                         <div class="form-container">
-                            <form>
+                            <!-- Добавлен метод POST и указаны атрибуты name для полей -->
+                            <form method="post">
                                 <p>Имя</p>
-                                <input type="text" class="my-input" />
+                                <!-- Добавлен атрибут name -->
+                                <input type="text" name="name" class="my-input" required />
                                 <p>Почта</p>
-                                <input type="email" placeholder="Почта" class="my-input" />
+                                <!-- Добавлен атрибут name -->
+                                <input type="email" name="email" placeholder="Почта" class="my-input" required />
                                 <p>Сообщение</p>
-                                <textarea placeholder="Сообщение" class="my-input"></textarea>
-                                <button type="submit">Отправить</button>
+                                <!-- Добавлен атрибут name -->
+                                <textarea name="message" placeholder="Сообщение" class="my-input"></textarea>
+                                <!-- Изменен тип кнопки на submit -->
+                                <button type='submit'>Отправить</button>
                             </form>
                         </div>
                     </div>
 
                     <!-- Информация -->
 
-                    <div class="info-container">
+                    <div class='info-container'>
                         <h5>Наши контакты</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                            in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <p>While these feedback styles cannot be styled with CSS, you can still customize
-                            the feedback text through JavaScript.</p>
+                        ...
                     </div>
                 </div>
 
