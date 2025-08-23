@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .sidebar {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      text-decoration: none; /* Убираем подчеркивание при наведении */
+      background-color: blue; /* Синий фон при наведении */
+      color: white; /* Цвет текста остается белым */
+    }
+    .logo {
+      width: 30px; /* Ширина логотипа */
+      margin-right: 10px; /* Отступ справа от логотипа */
+    }
+    .menu-header {
+      display: flex;
+      align-items: center; /* Выравнивание по центру по вертикали */
+    }
+    .menu-header h6 {
+      margin-bottom: 0; /* Убираем нижний отступ у заголовка */
+    }
+    .icon {
+      width: 24px; /* Размер иконок */
+      height: auto; /* Автоматическая высота для сохранения пропорций */
+      margin-right: 10px; /* Отступ справа от иконки */
+      background-color: transparent; /* Убираем фон у иконок */
+    }
+    .my-input {
+      width: 100%; /* Изменено на 100% для адаптивности */
+      color: gray;
+      background-color: white;
+      margin-bottom: 10px; /* Отступ между полями ввода */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-container {
+      border: 1px solid #ccc; /* Рамка вокруг контейнера */
+      border-radius: 10px; /* Закругленные углы */
+      padding: 8px; /* Внутренний отступ для контейнера */
+      text-align: left;
+      margin: 1px auto; /* Центрирование контейнера с отступом сверху и снизу */
+      max-width: 500px; /* Максимальная ширина контейнера */
+      margin-bottom: 5px; /* Уменьшенный нижний отступ у заголовков полей ввода */
+    }
+    .info-container {
+      width: 480px;
+      margin: 1px auto;
+      padding: 20px;
+      max-width: 500px; /* Максимальная ширина контейнера */
+    }
+    .dropdown-item {
+      color:#007bff !important;
+    }
+
+    .dropdown-item:hover {
+      background-color:#2798f5 !important;
+      color:white !important;
+    }
+
+    h4 {
+      font-size: 14px; /* Уменьшаем размер шрифта для заголовков в боковой панели */
+    }
+   .btn-secondary {
+       background-color: transparent !important;
+       border-color:black !important;
+       color:white !important;
+   }
+  </style>
+</head>
+<body>
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 sidebar">
+                <!-- Заголовок меню с логотипом -->
+                <div class="menu-header">
+                    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow@2x.png" alt="Логотип" class="logo">
+                    <h6>Меню</h6>
+                </div>
+                <hr class="border-2"/>
+
+                <!-- Ссылки с иконками -->
+                <h4><img src="https://img2.freepng.ru/20180425/fhw/kisspng-computer-icons-house-home-clip-art-5ae13952f38ce3.5750185615247097149976.jpg" alt="Главная" class="icon"> <a href="main.html">Главная</a></h4>
+                <h4><img src="https://c0.klipartz.com/pngpicture/326/161/gratis-png-iconos-de-la-computadora-del-velocimetro-coche-velocimetro-thumbnail.png" alt="Категории" class="icon"> <a href="category.html">Категории</a></h4>
+                <h4><img src="https://e7.pngegg.com/pngimages/153/193/png-clipart-computer-icons-purchase-order-open-pack-icon-computer-icons-purchase-order.png" alt="Заказы" class="icon"> <a href="catalog.html">Заказы</a></h4>
+                <h4><img src="https://png.pngtree.com/png-vector/20191027/ourmid/pngtree-calling-telephone-line-icon-vector-png-image_1885981.jpg" alt="Контакты" class="icon"> <a href="contacts.html">Контакты</a></h4>
+
+                <div class="dropdown mt-auto">
+                  <a class="btn btn-secondary dropdown-toggle w-100" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Пользователь
+                  </a>
+                  <ul class="dropdown-menu ">
+                    <li><a class="dropdown-item" href="#">Профиль</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Выход</a></li>
+                  </ul>
+                </div>
+            </div> <!-- Конец боковой панели -->
+
+            <div class="col-10">
+                <h1 style="margin-top: 70px; margin-bottom: 50px; text-align: center;">Контакты</h1>
+
+                <!-- Контактные данные и информация -->
+                <div class="row">
+
+                    <!-- Контактные данные -->
+                    <div class="col-md-6">
+                        <div class="form-container">
+                            <!-- Добавлен метод POST и указаны атрибуты name для полей -->
+                            <form method="post">
+                                <p>Имя</p>
+                                <!-- Добавлен атрибут name -->
+                                <input type="text" name="name" class="my-input" required />
+                                <p>Почта</p>
+                                <!-- Добавлен атрибут name -->
+                                <input type="email" name="email" placeholder="Почта" class="my-input" required />
+                                <p>Сообщение</p>
+                                <!-- Добавлен атрибут name -->
+                                <textarea name="message" placeholder="Сообщение" class="my-input"></textarea>
+                                <!-- Изменен тип кнопки на submit -->
+                                <button type='submit'>Отправить</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Информация -->
+
+                    <div class='info-container'>
+                        <h5>Наши контакты</h5>
+                        ...
+                    </div>
+                </div>
+
+            </div> <!-- Конец колонки контента -->
+        </div> <!-- Конец строки -->
+   </div> <!-- Конец контейнера -->
+
+   <!-- Подключение Bootstrap JS -->
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js'></script>
+
+</body>
+</html>

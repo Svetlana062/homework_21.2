@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    .sidebar {
+      background-color: black;
+      color: white;
+      padding: 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      text-decoration: none; /* Убираем подчеркивание при наведении */
+      background-color: #2798f5; /* Синий фон при наведении */
+      color: white; /* Цвет текста остается белым */
+    }
+    .card_param {
+      width: 20rem;
+      margin-top: 20px;
+    }
+    .logo {
+      width: 30px; /* Ширина логотипа */
+      margin-right: 10px; /* Отступ справа от логотипа */
+    }
+    .menu-header {
+      display: flex;
+      align-items: center; /* Выравнивание по центру по вертикали */
+    }
+    .menu-header h6 {
+      margin-bottom: 0; /* Убираем нижний отступ у заголовка */
+    }
+    .icon {
+      width: 24px; /* Размер иконок */
+      height: auto; /* Автоматическая высота для сохранения пропорций */
+      margin-right: 10px; /* Отступ справа от иконки */
+      background-color: transparent; /* Убираем фон у иконок */
+    }
+
+    .table {
+        width: 100%; /* Занимает всю ширину родительского элемента */
+        border-radius: 10px; /* Закругленные углы */
+        overflow: hidden; /* Скрывает части содержимого за границами */
+        margin-bottom: 20px; /* Отступ снизу для разделения таблиц */
+        border: 2px solid #007bff; /* Внешняя рамка синего цвета */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Тень для эффекта глубины */
+    }
+
+    .table th, .table td {
+        padding: 15px; /* Отступы внутри ячеек */
+        text-align: center; /* Выравнивание текста по центру */
+        border-top: none; /* Убирает верхнюю границу ячеек внутри таблицы */
+        border-bottom: none; /* Убирает нижнюю границу ячеек внутри таблицы */
+    }
+
+    .table th {
+        background-color: gray;
+        color: white;
+    }
+
+    .table td {
+        background-color: white;
+        color: black;
+    }
+
+    .product-container {
+        display: flex;
+        justify-content: space-between; /* Распределяет пространство между элементами */
+        padding: 20px; /* Отступы вокруг контейнера */
+    }
+
+    .col {
+        flex-basis: calc(33.33% - 20px); /* Занимает равное пространство с учетом отступов между колонками */
+        margin-right: 10px; /* Отступы между колонками */
+    }
+
+    .col:last-child {
+        margin-right: 0; /* Убираем правый отступ у последней колонки */
+    }
+
+    .btn-custom {
+        background-color: white; /* Белый фон кнопки */
+        color: #2798f5; /* Черный текст кнопки */
+        border: 2px solid #2798f5; /* Синяя рамка кнопки */
+    }
+
+    .btn-custom:hover {
+        background-color: #2798f5; /* Светло-серый фон при наведении на кнопку */
+        color: white; /* Цвет текста остается черным при наведении на кнопку */
+    }
+
+   .btn-secondary {
+       background-color: transparent !important;
+       border-color:black !important;
+       color:white !important;
+   }
+
+   .dropdown-item {
+       color:#007bff !important;
+   }
+
+   .dropdown-item:hover {
+       background-color:#2798f5 !important;
+       color:white !important;
+   }
+
+   h4 {
+       font-size: 14px; /* Уменьшаем размер шрифта для заголовков в боковой панели */
+   }
+
+  </style>
+</head>
+<body>
+   <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 sidebar">
+                <!-- Заголовок меню с логотипом -->
+                <div class="menu-header">
+                    <img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow@2x.png" alt="Логотип" class="logo">
+                    <h6>Меню</h6>
+                </div>
+                <hr class="border-2"/>
+
+                <!-- Ссылки с иконками -->
+                <h4><img src="https://img2.freepng.ru/20180425/fhw/kisspng-computer-icons-house-home-clip-art-5ae13952f38ce3.5750185615247097149976.jpg" alt="Главная" class="icon"> <a href="main.html">Главная</a></h4>
+                <h4><img src="https://c0.klipartz.com/pngpicture/326/161/gratis-png-iconos-de-la-computadora-del-velocimetro-coche-velocimetro-thumbnail.png" alt="Категории" class="icon"> <a href="category.html">Категории</a></h4>
+                <h4><img src="https://e7.pngegg.com/pngimages/153/193/png-clipart-computer-icons-purchase-order-open-pack-icon-computer-icons-purchase-order.png" alt="Заказы" class="icon"> <a href="catalog.html">Заказы</a></h4>
+                <h4><img src="https://png.pngtree.com/png-vector/20191027/ourmid/pngtree-calling-telephone-line-icon-vector-png-image_1885981.jpg" alt="Контакты" class="icon"> <a href="contacts.html">Контакты</a></h4>
+
+                <div class="dropdown mt-auto">
+                  <a class="btn btn-secondary dropdown-toggle w-100" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Пользователь
+                  </a>
+                  <ul class="dropdown-menu ">
+                    <li><a class="dropdown-item" href="#">Профиль</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Выход</a></li>
+                  </ul>
+                </div>
+            </div> <!-- Конец боковой панели -->
+            <div class="col-10">
+                <h1 style="margin-top: 70px; text-align: center;">Главная</h1>
+                <p style="color: gray; text-align: center;">Вы находитесь на сайте, предназначенном для продажи товаров</p>
+
+                <!-- Карточки товаров -->
+                <div class='product-container'>
+
+                  <!-- Товар 1 -->
+                  <div class='col'>
+                    <table class='table'>
+                      <tr>
+                          <th style='background-color:#e3e3e3;color:#080808;'>Товар 1</th>
+                      </tr>
+                      <tr>
+                          <td style='background-color:white;color:black;'>
+                              <h3>$100</h3>
+                              <p>10 users included, 2 GB of storage, Email support, Help center access</p>
+                              <a href='#' class='btn btn-custom w-100'>Купить</a> <!-- Измененная кнопка -->
+                          </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <!-- Товар 2 -->
+                  <div class='col'>
+                    <table class='table'>
+                      <tr>
+                          <th style='background-color:#e3e3e3;color:#080808;'>Товар 2</th> <!-- Исправлено название товара -->
+                      </tr>
+                      <tr>
+                          <td style='background-color:white;color:black;'>
+                              <h3>$100</h3>
+                              <p>10 users included, 2 GB of storage, Email support, Help center access</p>
+                              <a href='#' class='btn btn-custom w-100'>Купить</a> <!-- Измененная кнопка -->
+                          </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <!-- Товар 3 -->
+                  <div class='col'>
+                    <table class='table'>
+                      <tr>
+                          <th style='background-color:#e3e3e3;color:#080808;'>Товар 3</th> <!-- Исправлено название товара -->
+                      </tr>
+                      <tr>
+                          <td style='background-color:white;color:black;'>
+                              <h3>$100</h3>
+                              <p>10 users included, 2 GB of storage, Email support, Help center access</p>
+                              <a href='#' class='btn btn-custom w-100'>Купить</a> <!-- Измененная кнопка -->
+                          </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                </div> <!-- Конец карточек товаров -->
+            </div> <!-- Конец колонки контента -->
+        </div> <!-- Конец строки -->
+    </div> <!-- Конец контейнера -->
+
+    <!-- Подключение Bootstrap JS -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js'></script>
+
+</body>
+</html>
